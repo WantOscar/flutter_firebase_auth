@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Resister extends StatefulWidget {
   const Resister({super.key});
@@ -21,7 +22,8 @@ class _ResisterState extends State<Resister> {
           .then((value) {
         email.clear();
         password.clear();
-        Navigator.of(context).pop();
+        Get.back();
+        // Navigator.of(context).pop();
       });
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

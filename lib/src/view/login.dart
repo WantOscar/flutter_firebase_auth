@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_auth/src/view/resister.dart';
+import 'package:get/get.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -48,8 +49,9 @@ class _LoginViewState extends State<LoginView> {
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Resister()));
+                Get.to(() => const Resister());
+                // Navigator.of(context).push(
+                //     MaterialPageRoute(builder: (context) => const Resister()));
               },
               child: const Text('Resister'),
             ),
